@@ -29,7 +29,6 @@
         img {
             position: relative;
             width: 100%;
-            top: -500px;
         }
 
         .row {
@@ -45,11 +44,7 @@
     <script> 
         $(document).ready(function () {
             $("#flip1").click(function () {
-                $("#panel1").slideToggle("slow", function () {
-                    $("img").animate({
-                        top: '0px'
-                    }, "slow");
-                });
+                $("#panel1").slideToggle("slow");
             });
             $("#flip2").click(function () {
                 $("#panel2").slideToggle("slow");
