@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animált oldaleltűnés</title>
+
+    <style>
+        body {
+            background-color: rgb(20, 20, 39);
+            color: rgb(162, 215, 231);
+            font-family: Arial;
+        }
+
+        .nav-link {
+            padding: 2rem;
+            margin-top: 15rem;
+            border: 1px solid black;
+            background-color: rgb(65, 21, 90);
+            color: white;
+            text-decoration: none;
+        }
+
+        ul li {
+            list-style: none;
+            padding: .8rem 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Animált oldaleltűnés kattintás után</h1>
+    <hr>
+    <ul>
+        <li>
+            <a class="nav-link" href="show-hide-fade.html">show-hide-fade</a>
+        </li>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $("a.nav-link").click(function (ev) {
+            ev.preventDefault();
+            var link = $(this);
+            $(document.body).animate({
+                opacity: '0'
+            }, 2000, function () {
+                document.location = link.attr("href");
+            })
+        });
+    </script>
+</body>
+
+</html>
